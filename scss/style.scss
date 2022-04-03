@@ -252,7 +252,7 @@ section#about{
           }
         }
 
-        &:hover, :active{
+        &:hover, &:active, &:focus{
           animation: shake 0.5s; 
           animation-iteration-count: infinite; 
 
