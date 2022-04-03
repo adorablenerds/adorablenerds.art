@@ -1,0 +1,212 @@
+extends layout
+
+block content
+  script(type='module', src='/javascripts/main.js')
+  script(type='module', src='/javascripts/swiper.js')
+
+
+  // navbar
+  nav.navbar.navbar-light.navbar-expand-lg.fixed-top.shadow-lg.bg-white.mt-3shadow-lg.mb-5.bg-white.rounded.d-none.d-lg-block
+    button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarAdorableNerds', aria-controls='navbarAdorableNerds', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarAdorableNerds.collapse.navbar-collapse
+      .social-media.d-flex.fs-4
+        each social in nav.social_networks
+          a(href=social.link) 
+            i.bi(class=social.class)
+      ul.navbar-nav.w-100.justify-content-evenly
+        each item in nav.items
+          li.nav-item
+            a.nav-link(href=item.link) #{item.name}
+
+  
+  // Hero Section
+  - var hero_bg_image = home.bg_image;
+  - var hero_bg_color = home.bg_color;
+  - var hero_effect = home.hero_effect;
+  - var hero_image = home.hero_image;
+  - var hero_subtitle = home.subtitle;
+
+  section.bg-light#home(style='background: url('+ hero_bg_image + '); background-color: '+ hero_bg_color + ' !important;')  
+    - var n = 0;
+    ul.bg-squares
+      each val in [1, 2, 3, 4, 5, 6, 7, 8]
+        li
+
+    // Used to mobile version render
+    .social-media.d-flex.d-block.d-lg-none.p-3.fs-1
+      each social in nav.social_networks
+        a.me-2.text-white(href=social.link) 
+          i.bi(class=social.class)
+
+    .container.pt-0.pt-lg-9.d-flex.flex-column.justify-content-center
+      .d-flex.flex-wrap.flex-sm-nowrap.flex-row.align-items-center
+        .d-flex.order-2.order-lg-1.h-100.flex-column.justify-content-start.justify-content-sm-center
+          .intro.d-flex.flex-wrap.flex-lg-nowrap.justify-content-center
+            img.img-fluid.brand.d-none.d-lg-block(src=home.brand_img, alt='Adorable Nerds Brand')
+            h1.display-3.display-lg-1 #{home.title}
+          .quote
+            p.d-flex.flex-column 
+              q #{home.phrase}
+              i.text-end.text-lg-start #{home.author}
+        .character.d-flex.order-1.order-lg-2.pe-4.pe-lg-0.justify-content-center.align-items-end.align-items-sm-end
+          img.img-fluid.character-bg(src=hero_effect, alt='Home Hero Effect')
+          img.img-fluid.character-art(src=hero_image, alt='Home Hero Image')
+    
+      
+  // About Section
+  - var about_bg_color = about.bg_color;
+  - var nerd_bg_image = about.nerd_bg_image;
+  - var nerd_bg_color = about.nerd_bg_color;
+  - var nerd_effect = about.nerd_effect;
+  - var nerd_image = about.nerd_image;
+  - var traits_image = about.traits_image;
+
+  section.bg-light#about(style='background-color: '+ about_bg_color + ' !important;')  
+    ul.bg-bubbles
+      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        li
+
+    .d-flex.flex-column.float-lg-left.float-lg-left.float-xl-left.flex-nerd.position-absolute.d-none.d-lg-flex
+      .float-nerd(style='background: url('+ nerd_bg_image + '); background-color: '+ nerd_bg_color + ' !important;')  
+        img.img-fluid.character-bg(src=nerd_effect, alt='About Nerd Effect')
+        img.img-fluid.character-art(src=nerd_image, alt='About Nerd Image')
+    .container.pt-4.pt-lg-9
+      h2.text-center  #{about.title} 
+      .d-flex.h-100.flex-wrap.flex-lg-nowrap        
+        .about-us.order-1
+          each paragraph in about.paragraphs
+            p.lead.text-justify.fs-6.fs-lg-0 #{paragraph}
+        .traits.order-2
+          .group.d-flex.flex-row.w-100 
+            .d-flex.flex-column.h-100.trait-col-evenly            
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid.accessory(src="/images/traits/accessory.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Accessory
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid(src="/images/traits/clothes.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Clothes
+            .d-flex.flex-column.h-100.justify-content-between
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid(src="/images/traits/body.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Body                          
+              label.trait-title.text-center Traits
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid(src="/images/traits/glasses.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Glasses   
+            .d-flex.flex-column.h-100.trait-col-evenly
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid(src="/images/traits/hair.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Hair            
+              .trait.d-flex.justify-content-center.align-items-center
+                img.img-fluid(src="/images/traits/expression.png")
+                .label.d-flex.flex-column.justify-content-center.align-items-center
+                  span Expression            
+
+
+  // Roadmap Section
+  section.bg-light#roadmap
+    ul.bg-bubbles
+      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        li
+
+    .container.pt-4.pt-lg-9
+      .d-flex.flex-column.order-1.intro.text-center
+        h2 #{roadmap.title} 
+        p.lead.text-justify.fs-6.fs-lg-0 #{roadmap.subtitle}
+        // Slider main container
+        .swiper-container.justify-container-center
+          // Additional required wrapper
+          .swiper-wrapper.d-flex.flex-row
+            // Slides
+            each phase in roadmap.phases
+              - var id_m = "#".concat(phase.title.replace(/\s+/g, '-').toLowerCase());
+              .swiper-slide.d-flex.flex-column                  
+                .picture
+                  img(src=phase.image alt='')
+                .detail.d-flex.flex-column
+                  h3 #{phase.title}
+                  span #{phase.subtitle}
+                  a.more(data-bs-toggle='modal' data-bs-target=id_m) Here for details
+
+          .swiper-pagination
+          .swiper-scrollbar                      
+                      
+      // Modal
+      each phase in roadmap.phases
+        - var id_m = phase.title.replace(/\s+/g, '-').toLowerCase();
+        .modal.fade(id=id_m data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+          .modal-dialog.modal-lg
+            .modal-content
+              .modal-header
+                h5#staticBackdropLabel.modal-title #{phase.title}
+                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+              .modal-body
+                each objective in phase.objectives
+                  .d-flex.flex-row.align-items-center
+                    div(class=objective.status)
+                    p #{objective.text}
+                each paragraph in phase.paragraphs 
+                  p.paragraph #{paragraph}
+              .modal-footer.flex-row 
+                p Legend:
+                div(class="done")
+                p Done
+                div(class="pending")
+                p Pending
+                
+  
+  // FAQ Section
+  - var faq_bg_image = faq.bg_image;
+  - var faq_bg_color = faq.bg_color;
+  section.bg-light#faq(style='background: url('+ faq_bg_image + '); background-color: '+ faq_bg_color + ' !important;')  
+    ul.bg-squares
+      each val in [1, 2, 3, 4, 5, 6, 7, 8]
+        li    
+    .container.pt-4.pt-lg-9.text-center
+      .row 
+        .col-lg-12.order-1
+          h2 F.A.Q
+          #an-accordion.accordion.accordion-flush 
+            each topic in faq.topics
+              - var id_ah = "heading_" + topic.seq;
+              - var id_ac = "collapse_" + topic.seq;
+              - var id_ac2 = "#collapse_" + topic.seq;
+              .accordion-item
+                h2.accordion-header(id=id_ah)
+                  button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target=id_ac2 aria-expanded='false' aria-controls=id_ac)
+                    p.title #{topic.seq}. #{topic.title}
+                .accordion-collapse.collapse(id=id_ac aria-labelledby=id_ah data-bs-parent='#an-accordion')
+                  .accordion-body
+                    each paragraph in topic.paragraphs                     
+                      p.paragraph.text-start !{paragraph}              
+          
+  
+  // Future Section
+  section.bg-light#future  
+    ul.bg-bubbles
+      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        li
+    .container.pt-4.pt-lg-9.text-center
+      .row 
+        .col-lg-12.order-1
+          h2 Future Plans 
+
+
+  // Footer Section
+  footer.d-flex.flex-row
+    .container.d-flex.align-items-center
+        .brand
+          img.img-fluid.character-bg(src="/images/adorable_nerds_brand_light.png", alt='Adorable Nerds Brand')
+        .nav.w-100.flex-column.flex-lg-row.align-items-center.justify-content-evenly
+          each item in nav.items
+            a.footer-link(href=item.link) #{item.name}
+        .social-media.d-flex.fs-3.flex-wrap.flex-lg-nowrap
+          each social in nav.social_networks
+            a(href=social.link) 
+              i.bi(class=social.class)
