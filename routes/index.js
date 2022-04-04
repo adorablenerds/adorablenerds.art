@@ -7,6 +7,7 @@ const home = require('../cms/home');
 const about = require('../cms/about');
 const roadmap = require('../cms/roadmap');
 const faq = require('../cms/faq');
+const future = require('../cms/future');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +16,8 @@ router.get('/', function(req, res, next) {
     home: home.cms,
     about: about.cms,
     roadmap: roadmap.cms,
-    faq: faq.cms});
+    faq: faq.cms,
+    future: future.cms});
 });
 
 module.exports = router;

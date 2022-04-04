@@ -7,8 +7,7 @@
 - Custom map amends
 - Custom utilities
 - Bootstrap main import
-***********************
-*/
+**********************/
 // Import Fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
@@ -452,6 +451,15 @@ section#faq{
 section#future{
   min-height: 100vh !important; 
 
+  .future-img {
+    width: 100% !important;
+  }
+
+  @media (min-width: 576px){
+    .future-img {
+      width: 35% !important;
+    }
+  } 
 }
 
 

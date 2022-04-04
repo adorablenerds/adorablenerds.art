@@ -193,9 +193,14 @@ block content
       each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         li
     .container.pt-4.pt-lg-9.text-center
-      .row 
-        .col-lg-12.order-1
-          h2 Future Plans 
+      h2 #{future.title} 
+      .d-flex.h-100.flex-wrap.flex-lg-nowrap.align-items-sm-center.align-center-center     
+        .future-img.order-2.order-sm-1
+          - var future_img = future.future_img
+          img.img-fluid.character(src=future_img, alt='Future Plans')
+        .future-plans.order-1.order-sm-2
+          each paragraph in future.paragraphs
+            p.lead.text-justify.fs-6.fs-lg-0 #{paragraph}
 
 
   // Footer Section

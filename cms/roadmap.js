@@ -45,7 +45,7 @@ const cms = {
             ]
         },
         {
-            image: "/images/deborah-nerd.png",
+            image: "/images/california-nerd.png",
             title: "Stage 3",
             subtitle: "50% Sold",
             objectives: [
@@ -63,7 +63,7 @@ const cms = {
             ]
         },
         {
-            image: "/images/john-nerd.png",
+            image: "/images/james-nerd.png",
             title: "Stage 4",
             subtitle: "75% Sold",
             objectives: [
@@ -81,7 +81,7 @@ const cms = {
             ]
         },
         {
-            image: "/images/adriano-nerd.png",
+            image: "/images/rapha-nerd.png",
             title: "Stage 5",
             subtitle: "100% Sold",
             objectives: [
