@@ -13,7 +13,7 @@ const cms = {
                 `<b>File hosting:</b> IPFS`,
                 `<b>Royalty fees:</b> 2,5%`,
                 `<b>Number of traits:</b> 6`,
-                `<b>Number of attributes:</b> 6`,
+                `<b>Number of attributes:</b> ~180`,
                 `<b>Minimum number of traits:</b> 5`,
                 `<b>Licensing:</b> By owning a Adorable Nerds NFT you own the underlying\
                  artwork and all of its Intellectual Property` ,
@@ -25,16 +25,16 @@ const cms = {
             seq: 2,
             title: "When is the mint date?",
             paragraphs: [
-                `<b>Pré sales date:</b> - to be defined`,
-                `<b>Public sales date:</b> - to be defined`
+                `<b>Pré sales date:</b> to be defined`,
+                `<b>Public sales date:</b> 24h after pré sales`
             ]
         },
         {
             seq: 3,
             title: "How much it will cost?",
             paragraphs: [
-                `<b>On pré sales:</b> - 0.059 ETH`,
-                `<b>On public sales:</b> - 0.069 ETH`
+                `<b>On pré sales:</b> 0.049 ETH`,
+                `<b>On public sales:</b> 0.059 ETH`
             ]
         },        
         {
